@@ -1,0 +1,40 @@
+{
+  "name": "api-reservas",
+  "version": "1.0.0",
+  "description": "Proyecto de API RESTful con Node.js y Express para SD",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Javiiiis/api-reservas.git"
+  },
+  "keywords": [
+    "CRUD",
+    "REST",
+    "node",
+    "express",
+    "mongodb",
+    "mongojs"
+  ],
+  "author": "Franciso Javier Perez Martinez",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Javiiiis/api-reservas/issues"
+  },
+  "homepage": "https://github.com/Javiiiis/api-reservas#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "jwt-simple": "^0.5.6",
+    "moment": "^2.29.1",
+    "mongodb": "^3.6.3",
+    "mongojs": "^3.1.0",
+    "morgan": "^1.10.0",
+    "node-fetch": "^2.6.1"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.6"
+  }
+}
