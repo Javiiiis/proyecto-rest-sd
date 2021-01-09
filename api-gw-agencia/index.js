@@ -9,7 +9,7 @@ const logger = require('morgan');
 const fetch = require('node-fetch');
 const fs = require('fs');
 const https = require('https');
-
+const doc = require('./documentacion.json');
 const Token = require('./services/token.service');
 
 const opciones = {
@@ -49,6 +49,13 @@ function auth(req, res, next) {
         return next(new Error("Acceso no autorizado a este servicio."));
     })
 }
+
+//Documentación
+app.get('/api/docs', (req, res, next) => {
+    res.status(200).json({
+        item : doc.item
+    });
+});
 
 // Rutas y Controladores.
 // Implementamos el API RESTFul a través de los métodos

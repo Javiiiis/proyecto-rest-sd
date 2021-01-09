@@ -6,158 +6,7 @@
 	},
 	"item": [
 		{
-			"name": "SD-API-Reservas",
-			"item": [
-				{
-					"name": "/api",
-					"request": {
-						"method": "GET",
-						"header": [],
-						"url": {
-							"raw": "https://localhost:3001/api",
-							"protocol": "https",
-							"host": [
-								"localhost"
-							],
-							"port": "3001",
-							"path": [
-								"api"
-							]
-						},
-						"description": "Devuelvo todas las tablas de nuestra BD."
-					},
-					"response": []
-				},
-				{
-					"name": "/api/{reservas}",
-					"request": {
-						"method": "GET",
-						"header": [],
-						"url": {
-							"raw": "https://localhost:3001/api/Hotel",
-							"protocol": "https",
-							"host": [
-								"localhost"
-							],
-							"port": "3001",
-							"path": [
-								"api",
-								"Hotel"
-							]
-						},
-						"description": "Mostrar la reserva {reservas} concreta de nuestra BD."
-					},
-					"response": []
-				},
-				{
-					"name": "/api/{reservas}/{id}",
-					"request": {
-						"method": "GET",
-						"header": [],
-						"url": {
-							"raw": "http://localhost:3001/api/Hotel/5fb63fdc6d1e87128f7ecfc4",
-							"protocol": "http",
-							"host": [
-								"localhost"
-							],
-							"port": "3001",
-							"path": [
-								"api",
-								"Hotel",
-								"5fb63fdc6d1e87128f7ecfc4"
-							]
-						},
-						"description": "Obtenemos un elemento mediante un {id} dado."
-					},
-					"response": []
-				},
-				{
-					"name": "/api/{reservas}",
-					"request": {
-						"method": "POST",
-						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": "{\n    \"_id\": \"5fb405750078b5105ea81eb2\",\n    \"nombre\": \"Mercedes\",\n    \"descripción\": \"Mercedes CLA\",\n    \"precio\": \"52€\",\n    \"fechaIda\": \"05/11/2020\",\n    \"fechaVuelta\": \"08/11/2020\",\n    \"origen\": \"Madrid\",\n    \"destino\": \"Londres\"\n}",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
-						"url": {
-							"raw": "https://localhost:3001/api/Vehiculo",
-							"protocol": "https",
-							"host": [
-								"localhost"
-							],
-							"port": "3001",
-							"path": [
-								"api",
-								"Vehiculo"
-							]
-						},
-						"description": "Crear una nueva reserva."
-					},
-					"response": []
-				},
-				{
-					"name": "/api/{reservas}/{id}",
-					"request": {
-						"method": "PUT",
-						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": "{\n    \"precio\": \"48€\",\n    \"destino\": \"Murcia\"\n}",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
-						"url": {
-							"raw": "http://localhost:3001/api/Hotel/5fb63fdc6d1e87128f7ecfc4",
-							"protocol": "http",
-							"host": [
-								"localhost"
-							],
-							"port": "3001",
-							"path": [
-								"api",
-								"Hotel",
-								"5fb63fdc6d1e87128f7ecfc4"
-							]
-						},
-						"description": "Modificamos un elemento de una {reserva} mediante un {id} dado."
-					},
-					"response": []
-				},
-				{
-					"name": "/api/{reservas}/{id}",
-					"request": {
-						"method": "DELETE",
-						"header": [],
-						"url": {
-							"raw": "http://localhost:3001/api/Vuelo/5fb41aafb9080e1333531b22",
-							"protocol": "http",
-							"host": [
-								"localhost"
-							],
-							"port": "3001",
-							"path": [
-								"api",
-								"Vuelo",
-								"5fb41aafb9080e1333531b22"
-							]
-						},
-						"description": "Eliminamos un elemento de una {reserva} mediante un {id} dado."
-					},
-					"response": []
-				}
-			]
-		},
-		{
-			"name": "SD-API-GW",
+			"name": "API-GW",
 			"item": [
 				{
 					"name": "/api/auth/signup",
@@ -406,7 +255,7 @@
 			]
 		},
 		{
-			"name": "SD-API-Usuarios",
+			"name": "API-Usuarios",
 			"item": [
 				{
 					"name": "/api/login",
@@ -534,7 +383,7 @@
 			"name": "Proveedor-Vuelos",
 			"item": [
 				{
-					"name": "/api/{coleccion}",
+					"name": "/api/Ofertas",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
 					},
@@ -562,7 +411,7 @@
 								"Ofertas"
 							]
 						},
-						"description": "Mostrar elementos de ofertas o reservas"
+						"description": "Mostrar todas las ofertas disponibles"
 					},
 					"response": []
 				},
@@ -694,26 +543,6 @@
 			"name": "Proveedor-Vehiculos",
 			"item": [
 				{
-					"name": "/api",
-					"request": {
-						"method": "GET",
-						"header": [],
-						"url": {
-							"raw": "https://localhost:3011/api",
-							"protocol": "https",
-							"host": [
-								"localhost"
-							],
-							"port": "3011",
-							"path": [
-								"api"
-							]
-						},
-						"description": "Coleccion"
-					},
-					"response": []
-				},
-				{
 					"name": "/api/Ofertas",
 					"request": {
 						"method": "GET",
@@ -730,7 +559,7 @@
 								"Ofertas"
 							]
 						},
-						"description": "Mostrar todas las ofertas "
+						"description": "Mostrar todas las ofertas disponibles"
 					},
 					"response": []
 				},
@@ -840,26 +669,6 @@
 			"name": "Proveedor-Hoteles",
 			"item": [
 				{
-					"name": "/api",
-					"request": {
-						"method": "GET",
-						"header": [],
-						"url": {
-							"raw": "https://localhost:3012/api",
-							"protocol": "https",
-							"host": [
-								"localhost"
-							],
-							"port": "3012",
-							"path": [
-								"api"
-							]
-						},
-						"description": "Coleccion"
-					},
-					"response": []
-				},
-				{
 					"name": "/api/Ofertas",
 					"request": {
 						"method": "GET",
@@ -876,7 +685,7 @@
 								"Ofertas"
 							]
 						},
-						"description": "Mostrar todas las ofertas "
+						"description": "Mostrar todas las ofertas disponibles"
 					},
 					"response": []
 				},
@@ -986,7 +795,7 @@
 			"name": "API-Transacciones",
 			"item": [
 				{
-					"name": "/api/vehiculo/Ofertas",
+					"name": "/api/{servicio}/Ofertas",
 					"request": {
 						"method": "GET",
 						"header": [],
@@ -1003,7 +812,7 @@
 								"Ofertas"
 							]
 						},
-						"description": "API TRANSACCIONES, MOSTRAR TODAS LAS OFERTAS SIN RESERVAR"
+						"description": "Mostrar todas las ofertas según el {servicio} introducido."
 					},
 					"response": []
 				},
@@ -1043,7 +852,7 @@
 								"reservar"
 							]
 						},
-						"description": "Realizamos una reserva"
+						"description": "Cancelar una reserva"
 					},
 					"response": []
 				},
@@ -1084,37 +893,6 @@
 							]
 						},
 						"description": "reservar"
-					},
-					"response": []
-				},
-				{
-					"name": "/api/payment",
-					"request": {
-						"auth": {
-							"type": "bearer",
-							"bearer": [
-								{
-									"key": "token",
-									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiI1ZmU5YzA2MjJhNTgyMjFjZjY2YWQ4NDIiLCJpYXQiOjE2MDkyODE3NTAsImV4cCI6MTYwOTg4NjU1MH0.q20EyiYTOvaOEjZ7D7g-q0sfOnUIV7smpAhIrelbH3o",
-									"type": "string"
-								}
-							]
-						},
-						"method": "GET",
-						"header": [],
-						"url": {
-							"raw": "https://localhost:3100/api/payment",
-							"protocol": "https",
-							"host": [
-								"localhost"
-							],
-							"port": "3100",
-							"path": [
-								"api",
-								"payment"
-							]
-						},
-						"description": "pago"
 					},
 					"response": []
 				}

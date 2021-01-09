@@ -1,0 +1,164 @@
+{
+	"info": {
+		"_postman_id": "785bc91d-044f-4a23-b916-c252d3b974c9",
+		"name": "API-Vuelos",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "/api/Ofertas",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"fecha_ida\":\"25/04/2020\",\n    \"fecha_vuelta\":\"25/10/2020\",\n    \"origen\":\"Shibukawa\",\n    \"destino\":\"Magok\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:3010/api/Ofertas",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "3010",
+					"path": [
+						"api",
+						"Ofertas"
+					]
+				},
+				"description": "Mostrar todas las ofertas disponibles"
+			},
+			"response": []
+		},
+		{
+			"name": "/api/{coleccion}/search",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"fecha_ida\": \"13/07/2020\",\n    \"fecha_vuelta\": \"12/09/2020\",\n    \"origen\": \"IJmuiden\",\n    \"destino\": \"Rāipur\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:3010/api/Ofertas/search",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "3010",
+					"path": [
+						"api",
+						"Ofertas",
+						"search"
+					]
+				},
+				"description": "Buscamos la reserva por su intervalo de fecha y con su origen y destino."
+			},
+			"response": []
+		},
+		{
+			"name": "/api/Ofertas/{id}",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://localhost:3010/api/Ofertas/5fe86dc4acfc712456bcb39f",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "3010",
+					"path": [
+						"api",
+						"Ofertas",
+						"5fe86dc4acfc712456bcb39f"
+					]
+				},
+				"description": "Mostrar una oferta concreta"
+			},
+			"response": []
+		},
+		{
+			"name": "/api/reserva/vuelo/{id}",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "MITOKEN12345",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "https://localhost:3010/api/reserva/vuelo/5fe8a6e5acfc7124561ca2cb",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "3010",
+					"path": [
+						"api",
+						"reserva",
+						"vuelo",
+						"5fe8a6e5acfc7124561ca2cb"
+					]
+				},
+				"description": "Realizar una reserva, campo reservado = true;"
+			},
+			"response": []
+		},
+		{
+			"name": "/api/reserva/vuelo/{id}",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "MITOKEN12345",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "https://localhost:3010/api/reserva/vuelo/5fe8a6e5acfc7124561ca2d1",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "3010",
+					"path": [
+						"api",
+						"reserva",
+						"vuelo",
+						"5fe8a6e5acfc7124561ca2d1"
+					]
+				},
+				"description": "Cancelar reserva"
+			},
+			"response": []
+		}
+	]
+}

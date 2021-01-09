@@ -11,6 +11,7 @@ const fs = require('fs');
 const https = require('https');
 const { json } = require('express');
 const Token = require('./services/token.service');
+const doc = require('./documentacion.json');
 
 const opciones = {
     key: fs.readFileSync('./cert/key.pem'),
@@ -52,6 +53,13 @@ function auth(req, res, next) {
         return next(new Error("Acceso no autorizado a este servicio."));
     })
 }
+
+//Documentación
+app.get('/api/docs', (req, res, next) => {
+    res.status(200).json({
+        item : doc.item
+    });
+});
 
 // Rutas y Controladores.
 function chooseURL(service){
@@ -450,6 +458,9 @@ app.delete('/api/reservar', auth, async (req, res, next) => {
                 message = "Error al intentar devolver el pago";
                 estado = "Abortada";
                 bookError = true;
+            }
+            else {
+                res4 = "Devolución del pago realizado correctamente"
             }
             if(conectionFailed) { // Si la conexión a la pasarela ha fallado ...
                 message = "Fallo al intentar conectarse con la pasarela de pago, transacción abortada";

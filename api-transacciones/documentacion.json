@@ -1,0 +1,111 @@
+{
+	"info": {
+		"_postman_id": "859e310f-53ff-4363-8691-d271f52a5b5a",
+		"name": "API-Transacciones",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "/api/{servicio}/Ofertas",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://localhost:3100/api/vehiculo/Ofertas",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "3100",
+					"path": [
+						"api",
+						"vehiculo",
+						"Ofertas"
+					]
+				},
+				"description": "Mostrar todas las ofertas según el {servicio} introducido."
+			},
+			"response": []
+		},
+		{
+			"name": "/api/reservar",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiI1ZmU5YzA2MjJhNTgyMjFjZjY2YWQ4NDIiLCJpYXQiOjE2MTAyMTA3OTksImV4cCI6MTYxMDgxNTU5OX0.0dsBVwH62hogRezdO9aRhWEZgjG7gM9y9le0WkfHtyw",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"email\": \"email1234@gmail.com\",\n    \"vuelo\": \"5fe8a6e5acfc7124561ca2d5\",\n    \"hotel\": \"5fe8a376acfc712456165c47\",\n    \"vehiculo\": \"5fe8a3d5acfc71245616e2ae\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:3100/api/reservar",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "3100",
+					"path": [
+						"api",
+						"reservar"
+					]
+				},
+				"description": "reservar"
+			},
+			"response": []
+		},
+		{
+			"name": "/api/reservar",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiI1ZmU5YzA2MjJhNTgyMjFjZjY2YWQ4NDIiLCJpYXQiOjE2MTAyMTA3OTksImV4cCI6MTYxMDgxNTU5OX0.0dsBVwH62hogRezdO9aRhWEZgjG7gM9y9le0WkfHtyw",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"email\": \"email1234@gmail.com\",\n    \"vuelo\": \"5fe8a6e5acfc7124561ca2d5\",\n    \"hotel\": \"5fe8a376acfc712456165c47\",\n    \"vehiculo\": \"5fe8a3d5acfc71245616e2ae\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:3100/api/reservar",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "3100",
+					"path": [
+						"api",
+						"reservar"
+					]
+				},
+				"description": "Cancelar una reserva"
+			},
+			"response": []
+		}
+	]
+}

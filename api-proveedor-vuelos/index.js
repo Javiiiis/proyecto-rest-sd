@@ -8,6 +8,7 @@ const logger = require('morgan');
 const mongojs = require('mongojs');
 const fs = require('fs');
 const Token = require('./services/token.service');
+const doc = require('./documentacion.json');
 
 const opciones = {
     key: fs.readFileSync('./cert/key.pem'),
@@ -48,6 +49,13 @@ function auth(req, res, next) {
     })
 }
 
+//Documentación
+app.get('/api/docs', (req, res, next) => {
+    res.status(200).json({
+        item : doc.item
+    });
+});
+
 // Rutas y Controladores.
 
 app.get('/api', (req, res, next) => {
@@ -64,7 +72,7 @@ app.get('/api', (req, res, next) => {
 
 // Implementamos el API RESTFul a través de los métodos
 
-// Obtenemos todos los elementos de la tabla :coleccion (Ofertas o Reservas de Vuelos).
+// Obtenemos todos los elementos de la tabla :coleccion (Ofertas de Vuelos).
 app.get('/api/:coleccion', (req, res, next) => {
     const queColeccion = req.params.coleccion;
     console.log('GET /api/:coleccion');

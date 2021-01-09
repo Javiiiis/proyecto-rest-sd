@@ -8,6 +8,7 @@ const logger = require('morgan');
 const mongojs = require('mongojs');
 const fs = require('fs');
 const Token = require('./services/token.service');
+const doc = require('./documentacion.json');
 
 const opciones = {
     key: fs.readFileSync('./cert/key.pem'),
@@ -43,6 +44,13 @@ function auth(req, res, next) {
         return next(new Error("Acceso no autorizado a este servicio."));
     })
 }
+
+//Documentación
+app.get('/api/docs', (req, res, next) => {
+    res.status(200).json({
+        item : doc.item
+    });
+});
 
 // Rutas y Controladores.
 

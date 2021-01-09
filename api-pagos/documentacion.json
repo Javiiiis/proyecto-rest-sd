@@ -1,0 +1,40 @@
+{
+	"info": {
+		"_postman_id": "f98ce567-870b-4598-a491-ddf3fc186ec4",
+		"name": "API-Pagos",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "/api/payment",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiI1ZmU5YzA2MjJhNTgyMjFjZjY2YWQ4NDIiLCJpYXQiOjE2MTAyMTA3OTksImV4cCI6MTYxMDgxNTU5OX0.0dsBVwH62hogRezdO9aRhWEZgjG7gM9y9le0WkfHtyw",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://localhost:3005/api/payment",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "3005",
+					"path": [
+						"api",
+						"payment"
+					]
+				},
+				"description": "devolvemos de forma random si el pago se ha realizado correctamente o no."
+			},
+			"response": []
+		}
+	]
+}

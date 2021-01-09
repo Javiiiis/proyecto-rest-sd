@@ -1,0 +1,129 @@
+{
+	"info": {
+		"_postman_id": "f2940efc-87b7-4174-9591-6d3520b82d4d",
+		"name": "Reg/Auth",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "/api/login",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "MITOKEN12345",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\t\n    \"email\": \"email1234@gmail.com\",\n    \"password\": \"1111\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:3002/login",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "3002",
+					"path": [
+						"login"
+					]
+				},
+				"description": "Login de un usuario"
+			},
+			"response": []
+		},
+		{
+			"name": "/api/signup",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "MITOKEN12345",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\t\n\t\"usuario\": \"Alejandro\",\n    \"email\": \"prueba21@outlook.es\",\n    \"password\": \"1234\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:3002/signup",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "3002",
+					"path": [
+						"signup"
+					]
+				},
+				"description": "Registro"
+			},
+			"response": []
+		},
+		{
+			"name": "/api/users/:id",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://localhost:3002/api/users/5fe9c0622a58221cf66ad842",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "3002",
+					"path": [
+						"api",
+						"users",
+						"5fe9c0622a58221cf66ad842"
+					]
+				},
+				"description": "Mostrar usuarios de la bd"
+			},
+			"response": []
+		},
+		{
+			"name": "/api/users",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://localhost:3002/api/users",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "3002",
+					"path": [
+						"api",
+						"users"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

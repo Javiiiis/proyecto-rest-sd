@@ -1,0 +1,152 @@
+{
+	"info": {
+		"_postman_id": "87dcc155-7243-43ef-83cc-6d0fa7a767d6",
+		"name": "API-Hoteles",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "/api/Ofertas",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://localhost:3012/api/Ofertas",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "3012",
+					"path": [
+						"api",
+						"Ofertas"
+					]
+				},
+				"description": "Mostrar todas las ofertas disponibles"
+			},
+			"response": []
+		},
+		{
+			"name": "/api/{coleccion}/search",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"ciudad\": \"Shijie\",\n    \"fecha_entrada\": \"12/01/2020\",\n    \"fecha_salida\": \"10/01/2020\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:3012/api/Ofertas/search",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "3012",
+					"path": [
+						"api",
+						"Ofertas",
+						"search"
+					]
+				},
+				"description": "Mostrar todas las ofertas disponibles"
+			},
+			"response": []
+		},
+		{
+			"name": "/api/Ofertas/{id}",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://localhost:3012/api/Ofertas/5fe86dc4acfc712456bcb39f",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "3012",
+					"path": [
+						"api",
+						"Ofertas",
+						"5fe86dc4acfc712456bcb39f"
+					]
+				},
+				"description": "Mostrar una oferta concreta"
+			},
+			"response": []
+		},
+		{
+			"name": "/api/reserva/hotel/{id}",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiI1ZmU5YzA2MjJhNTgyMjFjZjY2YWQ4NDIiLCJpYXQiOjE2MDkyODE3NTAsImV4cCI6MTYwOTg4NjU1MH0.q20EyiYTOvaOEjZ7D7g-q0sfOnUIV7smpAhIrelbH3o",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "https://localhost:3012/api/reserva/hotel/5fe8a376acfc712456165c46",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "3012",
+					"path": [
+						"api",
+						"reserva",
+						"hotel",
+						"5fe8a376acfc712456165c46"
+					]
+				},
+				"description": "Reservar"
+			},
+			"response": []
+		},
+		{
+			"name": "/api/reserva/hotel/{id}",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiI1ZmU5YzA2MjJhNTgyMjFjZjY2YWQ4NDIiLCJpYXQiOjE2MDkyODE3NTAsImV4cCI6MTYwOTg4NjU1MH0.q20EyiYTOvaOEjZ7D7g-q0sfOnUIV7smpAhIrelbH3o",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "https://localhost:3012/api/reserva/hotel/5fe8a376acfc712456165c46",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "3012",
+					"path": [
+						"api",
+						"reserva",
+						"hotel",
+						"5fe8a376acfc712456165c46"
+					]
+				},
+				"description": "Cancelar reserva"
+			},
+			"response": []
+		}
+	]
+}

@@ -1,0 +1,233 @@
+{
+	"info": {
+		"_postman_id": "5fbb1ddd-ab60-439e-8ee4-48f8c3278543",
+		"name": "API-Gateway",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "/api/auth/signup",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "MITOKEN12345",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"usuario\": \"Fernando\",\n    \"email\": \"pruebagateway@gmail.com\",\n    \"password\": \"1111\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:3000/api/auth/signup",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"auth",
+						"signup"
+					]
+				},
+				"description": "GW Registro"
+			},
+			"response": []
+		},
+		{
+			"name": "/api/auth/login",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "MITOKEN12345",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"email\": \"email1234@gmail.com\",\n    \"password\": \"1111\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:3000/api/auth/login",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"auth",
+						"login"
+					]
+				},
+				"description": "GW Login"
+			},
+			"response": []
+		},
+		{
+			"name": "/api/listarVuelos",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://localhost:3000/api/listarVuelos",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"listarVuelos"
+					]
+				},
+				"description": "listar vuelos"
+			},
+			"response": []
+		},
+		{
+			"name": "/api/listarVehiculos",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://localhost:3000/api/listarVehiculos",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"listarVehiculos"
+					]
+				},
+				"description": "listar vehiculos"
+			},
+			"response": []
+		},
+		{
+			"name": "/api/listarHoteles",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://localhost:3000/api/listarHoteles",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"listarHoteles"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/api/reservar",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiI1ZmU5YzA2MjJhNTgyMjFjZjY2YWQ4NDIiLCJpYXQiOjE2MTAyMTA3OTksImV4cCI6MTYxMDgxNTU5OX0.0dsBVwH62hogRezdO9aRhWEZgjG7gM9y9le0WkfHtyw",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"vuelo\": \"5fe8a6e5acfc7124561ca2d5\",\n    \"hotel\": \"5fe8a376acfc712456165c47\",\n    \"vehiculo\": \"5fe8a3d5acfc71245616e2ae\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:3000/api/reservar",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"reservar"
+					]
+				},
+				"description": "reservar en el gw"
+			},
+			"response": []
+		},
+		{
+			"name": "/api/reservar",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiI1ZmU5YzA2MjJhNTgyMjFjZjY2YWQ4NDIiLCJpYXQiOjE2MTAyMTA3OTksImV4cCI6MTYxMDgxNTU5OX0.0dsBVwH62hogRezdO9aRhWEZgjG7gM9y9le0WkfHtyw",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"vuelo\": \"5fe8a6e5acfc7124561ca2d5\",\n    \"hotel\": \"5fe8a376acfc712456165c47\",\n    \"vehiculo\": \"5fe8a3d5acfc71245616e2ae\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:3000/api/reservar",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"reservar"
+					]
+				},
+				"description": "cancelar desde el gw\n"
+			},
+			"response": []
+		}
+	]
+}

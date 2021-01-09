@@ -9,6 +9,7 @@ const mongojs = require('mongojs');
 const fs = require('fs');
 const helmet = require('helmet');
 const moment = require('moment');
+const doc = require('./documentacion.json');
 
 const Password = require('./services/pass.service');
 const Token = require('./services/token.service');
@@ -29,6 +30,13 @@ app.use(logger('dev'));
 app.use(express.urlencoded({extended: false}));
 app.use(express.json());
 app.use(helmet());
+
+//Documentación
+app.get('/api/docs', (req, res, next) => {
+    res.status(200).json({
+        item : doc.item
+    });
+});
 
 // Rutas y Controladores.
 // Implementamos el API RESTFul a través de los métodos
