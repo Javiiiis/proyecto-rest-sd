@@ -1,0 +1,1180 @@
+{
+	"info": {
+		"_postman_id": "087450c9-1b93-4102-af64-ea9689a36f64",
+		"name": "SD-Viajes",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "SD-API-Reservas",
+			"item": [
+				{
+					"name": "/api",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://localhost:3001/api",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"api"
+							]
+						},
+						"description": "Devuelvo todas las tablas de nuestra BD."
+					},
+					"response": []
+				},
+				{
+					"name": "/api/{reservas}",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://localhost:3001/api/Hotel",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"api",
+								"Hotel"
+							]
+						},
+						"description": "Mostrar la reserva {reservas} concreta de nuestra BD."
+					},
+					"response": []
+				},
+				{
+					"name": "/api/{reservas}/{id}",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3001/api/Hotel/5fb63fdc6d1e87128f7ecfc4",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"api",
+								"Hotel",
+								"5fb63fdc6d1e87128f7ecfc4"
+							]
+						},
+						"description": "Obtenemos un elemento mediante un {id} dado."
+					},
+					"response": []
+				},
+				{
+					"name": "/api/{reservas}",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"_id\": \"5fb405750078b5105ea81eb2\",\n    \"nombre\": \"Mercedes\",\n    \"descripción\": \"Mercedes CLA\",\n    \"precio\": \"52€\",\n    \"fechaIda\": \"05/11/2020\",\n    \"fechaVuelta\": \"08/11/2020\",\n    \"origen\": \"Madrid\",\n    \"destino\": \"Londres\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://localhost:3001/api/Vehiculo",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"api",
+								"Vehiculo"
+							]
+						},
+						"description": "Crear una nueva reserva."
+					},
+					"response": []
+				},
+				{
+					"name": "/api/{reservas}/{id}",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"precio\": \"48€\",\n    \"destino\": \"Murcia\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3001/api/Hotel/5fb63fdc6d1e87128f7ecfc4",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"api",
+								"Hotel",
+								"5fb63fdc6d1e87128f7ecfc4"
+							]
+						},
+						"description": "Modificamos un elemento de una {reserva} mediante un {id} dado."
+					},
+					"response": []
+				},
+				{
+					"name": "/api/{reservas}/{id}",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3001/api/Vuelo/5fb41aafb9080e1333531b22",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"api",
+								"Vuelo",
+								"5fb41aafb9080e1333531b22"
+							]
+						},
+						"description": "Eliminamos un elemento de una {reserva} mediante un {id} dado."
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "SD-API-GW",
+			"item": [
+				{
+					"name": "/api/auth/signup",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "MITOKEN12345",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"usuario\": \"Fernando\",\n    \"email\": \"pruebagateway@gmail.com\",\n    \"password\": \"1111\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://localhost:3000/api/auth/signup",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"auth",
+								"signup"
+							]
+						},
+						"description": "GW Registro"
+					},
+					"response": []
+				},
+				{
+					"name": "/api/auth/login",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "MITOKEN12345",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"email\": \"email1234@gmail.com\",\n    \"password\": \"1111\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://localhost:3000/api/auth/login",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"auth",
+								"login"
+							]
+						},
+						"description": "GW Login"
+					},
+					"response": []
+				},
+				{
+					"name": "/api/listarVuelos",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://localhost:3000/api/listarVuelos",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"listarVuelos"
+							]
+						},
+						"description": "listar vuelos"
+					},
+					"response": []
+				},
+				{
+					"name": "/api/listarVehiculos",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://localhost:3000/api/listarVehiculos",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"listarVehiculos"
+							]
+						},
+						"description": "listar vehiculos"
+					},
+					"response": []
+				},
+				{
+					"name": "/api/listarHoteles",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://localhost:3000/api/listarHoteles",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"listarHoteles"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/api/reservar",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiI1ZmU5YzA2MjJhNTgyMjFjZjY2YWQ4NDIiLCJpYXQiOjE2MTAyMTA3OTksImV4cCI6MTYxMDgxNTU5OX0.0dsBVwH62hogRezdO9aRhWEZgjG7gM9y9le0WkfHtyw",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"vuelo\": \"5fe8a6e5acfc7124561ca2d5\",\n    \"hotel\": \"5fe8a376acfc712456165c47\",\n    \"vehiculo\": \"5fe8a3d5acfc71245616e2ae\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://localhost:3000/api/reservar",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"reservar"
+							]
+						},
+						"description": "reservar en el gw"
+					},
+					"response": []
+				},
+				{
+					"name": "/api/reservar",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiI1ZmU5YzA2MjJhNTgyMjFjZjY2YWQ4NDIiLCJpYXQiOjE2MTAyMTA3OTksImV4cCI6MTYxMDgxNTU5OX0.0dsBVwH62hogRezdO9aRhWEZgjG7gM9y9le0WkfHtyw",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"vuelo\": \"5fe8a6e5acfc7124561ca2d5\",\n    \"hotel\": \"5fe8a376acfc712456165c47\",\n    \"vehiculo\": \"5fe8a3d5acfc71245616e2ae\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://localhost:3000/api/reservar",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"reservar"
+							]
+						},
+						"description": "cancelar desde el gw\n"
+					},
+					"response": []
+				}
+			],
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			]
+		},
+		{
+			"name": "SD-API-Usuarios",
+			"item": [
+				{
+					"name": "/api/login",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "MITOKEN12345",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\t\n    \"email\": \"email1234@gmail.com\",\n    \"password\": \"1111\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://localhost:3002/login",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "3002",
+							"path": [
+								"login"
+							]
+						},
+						"description": "Login de un usuario"
+					},
+					"response": []
+				},
+				{
+					"name": "/api/signup",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "MITOKEN12345",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\t\n\t\"usuario\": \"Alejandro\",\n    \"email\": \"prueba21@outlook.es\",\n    \"password\": \"1234\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://localhost:3002/signup",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "3002",
+							"path": [
+								"signup"
+							]
+						},
+						"description": "Registro"
+					},
+					"response": []
+				},
+				{
+					"name": "/api/users/:id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://localhost:3002/api/users/5fe9c0622a58221cf66ad842",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "3002",
+							"path": [
+								"api",
+								"users",
+								"5fe9c0622a58221cf66ad842"
+							]
+						},
+						"description": "Mostrar usuarios de la bd"
+					},
+					"response": []
+				},
+				{
+					"name": "/api/users",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://localhost:3002/api/users",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "3002",
+							"path": [
+								"api",
+								"users"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Proveedor-Vuelos",
+			"item": [
+				{
+					"name": "/api/{coleccion}",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"fecha_ida\":\"25/04/2020\",\n    \"fecha_vuelta\":\"25/10/2020\",\n    \"origen\":\"Shibukawa\",\n    \"destino\":\"Magok\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://localhost:3010/api/Ofertas",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "3010",
+							"path": [
+								"api",
+								"Ofertas"
+							]
+						},
+						"description": "Mostrar elementos de ofertas o reservas"
+					},
+					"response": []
+				},
+				{
+					"name": "/api/{coleccion}/search",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"fecha_ida\": \"13/07/2020\",\n    \"fecha_vuelta\": \"12/09/2020\",\n    \"origen\": \"IJmuiden\",\n    \"destino\": \"Rāipur\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://localhost:3010/api/Ofertas/search",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "3010",
+							"path": [
+								"api",
+								"Ofertas",
+								"search"
+							]
+						},
+						"description": "Buscamos la reserva por su intervalo de fecha y con su origen y destino."
+					},
+					"response": []
+				},
+				{
+					"name": "/api/Ofertas/{id}",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://localhost:3010/api/Ofertas/5fe86dc4acfc712456bcb39f",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "3010",
+							"path": [
+								"api",
+								"Ofertas",
+								"5fe86dc4acfc712456bcb39f"
+							]
+						},
+						"description": "Mostrar una oferta concreta"
+					},
+					"response": []
+				},
+				{
+					"name": "/api/reserva/vuelo/{id}",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "MITOKEN12345",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "https://localhost:3010/api/reserva/vuelo/5fe8a6e5acfc7124561ca2cb",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "3010",
+							"path": [
+								"api",
+								"reserva",
+								"vuelo",
+								"5fe8a6e5acfc7124561ca2cb"
+							]
+						},
+						"description": "Realizar una reserva, campo reservado = true;"
+					},
+					"response": []
+				},
+				{
+					"name": "/api/reserva/vuelo/{id}",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "MITOKEN12345",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "https://localhost:3010/api/reserva/vuelo/5fe8a6e5acfc7124561ca2d1",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "3010",
+							"path": [
+								"api",
+								"reserva",
+								"vuelo",
+								"5fe8a6e5acfc7124561ca2d1"
+							]
+						},
+						"description": "Cancelar reserva"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Proveedor-Vehiculos",
+			"item": [
+				{
+					"name": "/api",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://localhost:3011/api",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "3011",
+							"path": [
+								"api"
+							]
+						},
+						"description": "Coleccion"
+					},
+					"response": []
+				},
+				{
+					"name": "/api/Ofertas",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://localhost:3011/api/Ofertas",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "3011",
+							"path": [
+								"api",
+								"Ofertas"
+							]
+						},
+						"description": "Mostrar todas las ofertas "
+					},
+					"response": []
+				},
+				{
+					"name": "/api/{coleccion}/search",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"marca\": \"Ford\",\n    \"modelo\": \"Fairlane\",\n    \"fecha_ida\": \"12/01/2020\",\n    \"fecha_vuelta\": \"16/01/2020\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://localhost:3011/api/Ofertas/search",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "3011",
+							"path": [
+								"api",
+								"Ofertas",
+								"search"
+							]
+						},
+						"description": "Mostrar todas las ofertas disponibles"
+					},
+					"response": []
+				},
+				{
+					"name": "/api/reserva/vehiculo/{id}",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "MITOKEN12345",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "https://localhost:3011/api/reserva/vehiculo/5fe8a3d5acfc71245616e2a6",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "3011",
+							"path": [
+								"api",
+								"reserva",
+								"vehiculo",
+								"5fe8a3d5acfc71245616e2a6"
+							]
+						},
+						"description": "Reservar"
+					},
+					"response": []
+				},
+				{
+					"name": "/api/reserva/vehiculo/{id}",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "MITOKEN12345",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "https://localhost:3011/api/reserva/vehiculo/5fe8a3d5acfc71245616e2a6",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "3011",
+							"path": [
+								"api",
+								"reserva",
+								"vehiculo",
+								"5fe8a3d5acfc71245616e2a6"
+							]
+						},
+						"description": "Cancelar reserva"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Proveedor-Hoteles",
+			"item": [
+				{
+					"name": "/api",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://localhost:3012/api",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "3012",
+							"path": [
+								"api"
+							]
+						},
+						"description": "Coleccion"
+					},
+					"response": []
+				},
+				{
+					"name": "/api/Ofertas",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://localhost:3012/api/Ofertas",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "3012",
+							"path": [
+								"api",
+								"Ofertas"
+							]
+						},
+						"description": "Mostrar todas las ofertas "
+					},
+					"response": []
+				},
+				{
+					"name": "/api/{coleccion}/search",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"ciudad\": \"Shijie\",\n    \"fecha_entrada\": \"12/01/2020\",\n    \"fecha_salida\": \"10/01/2020\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://localhost:3012/api/Ofertas/search",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "3012",
+							"path": [
+								"api",
+								"Ofertas",
+								"search"
+							]
+						},
+						"description": "Mostrar todas las ofertas disponibles"
+					},
+					"response": []
+				},
+				{
+					"name": "/api/reserva/hotel/{id}",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiI1ZmU5YzA2MjJhNTgyMjFjZjY2YWQ4NDIiLCJpYXQiOjE2MDkyODE3NTAsImV4cCI6MTYwOTg4NjU1MH0.q20EyiYTOvaOEjZ7D7g-q0sfOnUIV7smpAhIrelbH3o",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "https://localhost:3012/api/reserva/hotel/5fe8a376acfc712456165c46",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "3012",
+							"path": [
+								"api",
+								"reserva",
+								"hotel",
+								"5fe8a376acfc712456165c46"
+							]
+						},
+						"description": "Reservar"
+					},
+					"response": []
+				},
+				{
+					"name": "/api/reserva/hotel/{id}",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiI1ZmU5YzA2MjJhNTgyMjFjZjY2YWQ4NDIiLCJpYXQiOjE2MDkyODE3NTAsImV4cCI6MTYwOTg4NjU1MH0.q20EyiYTOvaOEjZ7D7g-q0sfOnUIV7smpAhIrelbH3o",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "https://localhost:3012/api/reserva/hotel/5fe8a376acfc712456165c46",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "3012",
+							"path": [
+								"api",
+								"reserva",
+								"hotel",
+								"5fe8a376acfc712456165c46"
+							]
+						},
+						"description": "Cancelar reserva"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "API-Transacciones",
+			"item": [
+				{
+					"name": "/api/vehiculo/Ofertas",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://localhost:3100/api/vehiculo/Ofertas",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "3100",
+							"path": [
+								"api",
+								"vehiculo",
+								"Ofertas"
+							]
+						},
+						"description": "API TRANSACCIONES, MOSTRAR TODAS LAS OFERTAS SIN RESERVAR"
+					},
+					"response": []
+				},
+				{
+					"name": "/api/reservar",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiI1ZmU5YzA2MjJhNTgyMjFjZjY2YWQ4NDIiLCJpYXQiOjE2MTAyMTA3OTksImV4cCI6MTYxMDgxNTU5OX0.0dsBVwH62hogRezdO9aRhWEZgjG7gM9y9le0WkfHtyw",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"email\": \"email1234@gmail.com\",\n    \"vuelo\": \"5fe8a6e5acfc7124561ca2d5\",\n    \"hotel\": \"5fe8a376acfc712456165c47\",\n    \"vehiculo\": \"5fe8a3d5acfc71245616e2ae\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://localhost:3100/api/reservar",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "3100",
+							"path": [
+								"api",
+								"reservar"
+							]
+						},
+						"description": "Realizamos una reserva"
+					},
+					"response": []
+				},
+				{
+					"name": "/api/reservar",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiI1ZmU5YzA2MjJhNTgyMjFjZjY2YWQ4NDIiLCJpYXQiOjE2MTAyMTA3OTksImV4cCI6MTYxMDgxNTU5OX0.0dsBVwH62hogRezdO9aRhWEZgjG7gM9y9le0WkfHtyw",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"email\": \"email1234@gmail.com\",\n    \"vuelo\": \"5fe8a6e5acfc7124561ca2d5\",\n    \"hotel\": \"5fe8a376acfc712456165c47\",\n    \"vehiculo\": \"5fe8a3d5acfc71245616e2ae\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://localhost:3100/api/reservar",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "3100",
+							"path": [
+								"api",
+								"reservar"
+							]
+						},
+						"description": "reservar"
+					},
+					"response": []
+				},
+				{
+					"name": "/api/payment",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiI1ZmU5YzA2MjJhNTgyMjFjZjY2YWQ4NDIiLCJpYXQiOjE2MDkyODE3NTAsImV4cCI6MTYwOTg4NjU1MH0.q20EyiYTOvaOEjZ7D7g-q0sfOnUIV7smpAhIrelbH3o",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://localhost:3100/api/payment",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "3100",
+							"path": [
+								"api",
+								"payment"
+							]
+						},
+						"description": "pago"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "API-Pagos",
+			"item": [
+				{
+					"name": "/api/payment",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiI1ZmU5YzA2MjJhNTgyMjFjZjY2YWQ4NDIiLCJpYXQiOjE2MDkyODE3NTAsImV4cCI6MTYwOTg4NjU1MH0.q20EyiYTOvaOEjZ7D7g-q0sfOnUIV7smpAhIrelbH3o",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://localhost:3005/api/payment",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "3005",
+							"path": [
+								"api",
+								"payment"
+							]
+						},
+						"description": "devolvemos de forma random si el pago se ha realizado correctamente o no."
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	]
+}
