@@ -12,6 +12,7 @@ const https = require('https');
 const { json } = require('express');
 const Token = require('./services/token.service');
 const doc = require('./documentacion.json');
+const { connect } = require('http2');
 
 const opciones = {
     key: fs.readFileSync('./cert/key.pem'),
@@ -21,7 +22,7 @@ const opciones = {
 const URL_WS_vuelos = "https://localhost:3010/api";
 const URL_WS_vehiculos = "https://localhost:3011/api";
 const URL_WS_hoteles = "https://localhost:3012/api";
-const URL_WS_Pagos = "https://localhost:3005/api";
+const URL_WS_Pagos = "https://172.20.42.18:3005/api";
 
 
 const app = express();
@@ -145,6 +146,9 @@ app.post('/api/reservar', auth, async (req, res, next) => {
                 estado = "Abortada";
                 bookError = true;
             }
+            else {
+                if(!conectionFailed) res1 = "Reserva realizada correctamente";
+            }
             if(conectionFailed) {
                 message = "Fallo al intentar conectarse con el proveedor de vuelos, transacción abortada.";
                 estado = "Abortada";
@@ -166,6 +170,9 @@ app.post('/api/reservar', auth, async (req, res, next) => {
                 message = "Error al reservar el vehiculo, transacción abortada.";
                 estado = "Abortada";
                 bookError = true;
+            }
+            else {
+                if(!conectionFailed) res2 = "Reserva realizada correctamente";
             }
             if(conectionFailed) {
                 message = "Fallo al intentar conectarse con el proveedor de vehiculos, transacción abortada.";
@@ -199,6 +206,9 @@ app.post('/api/reservar', auth, async (req, res, next) => {
                 message = "Error al reservar el hotel, transacción abortada.";
                 estado = "Abortada";
                 bookError = true;
+            }
+            else {
+                if(!conectionFailed) res3 = "Reserva realizada correctamente";
             }
             if(conectionFailed) {
                 message = "Fallo al intentar conectarse con el proveedor de hoteles, transacción abortada.";
@@ -352,7 +362,9 @@ app.delete('/api/reservar', auth, async (req, res, next) => {
                 bookError = true;
             }
             else {
-                res1 = "Reserva cancelada correctamente";
+                if(!conectionFailed) {
+                    res1 = "Reserva cancelada correctamente";
+                }
             }
             if(conectionFailed) {
                 message = "Fallo al intentar conectarse con el proveedor de vuelos, transacción abortada.";
@@ -377,7 +389,7 @@ app.delete('/api/reservar', auth, async (req, res, next) => {
                 bookError = true;
             }
             else {
-                res2 = "Reserva cancelada correctamente";
+                if(!conectionFailed) res2 = "Reserva cancelada correctamente";
             }
             if(conectionFailed) {
                 message = "Fallo al intentar conectarse con el proveedor de vehiculos, transacción abortada.";
@@ -413,7 +425,7 @@ app.delete('/api/reservar', auth, async (req, res, next) => {
                 bookError = true;
             }
             else {
-                res3 = "Reserva cancelada correctamente";
+               if(!conectionFailed) res3 = "Reserva cancelada correctamente";
             }
             if(conectionFailed) {
                 message = "Fallo al intentar conectarse con el proveedor de hoteles, transacción abortada.";
