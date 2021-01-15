@@ -18,7 +18,7 @@ const opciones = {
 };
 
 const URL_WS_users = "https://localhost:3002";
-const URL_WS_transacciones = "https://172.20.42.14:3100/api"
+const URL_WS_transacciones = "https://localhost:3100/api"
 
 const app = express();
 

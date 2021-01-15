@@ -22,7 +22,7 @@ const opciones = {
 const URL_WS_vuelos = "https://localhost:3010/api";
 const URL_WS_vehiculos = "https://localhost:3011/api";
 const URL_WS_hoteles = "https://localhost:3012/api";
-const URL_WS_Pagos = "https://172.20.42.18:3005/api";
+const URL_WS_Pagos = "https://localhost:3005/api";
 
 
 const app = express();
